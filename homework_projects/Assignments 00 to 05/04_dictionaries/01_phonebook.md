@@ -1,0 +1,47 @@
+## Problem Statement
+
+In this program we show an example of using dictionaries to keep track of information in a phonebook.
+
+## Solution
+
+```bash
+def add_contact(phonebook):
+  name = input("Enter contact name: ")
+  phone = input("Enter phone number: ")
+  phonebook[name] = phone
+  print(f"Contact {name} added successfully!")
+
+def view_contact(phonebook):
+    name = input("Enter contact name to search: ")
+    if name in phonebook:
+        print(f"{name}: {phonebook[name]}")
+    else:
+        print("Contact not found!")
+
+
+def main():
+    phonebook = {}
+
+    while True:
+      print("\nPhonebook Menu:")
+      print("1. Add Contact")
+      print("2. View Contact")
+      print("3. Exit")
+
+      choose = input("Enter your choice: ")
+
+      if choose == '1':
+        add_contact(phonebook)
+      elif choose == '2':
+        view_contact(phonebook)
+      elif choose == '3':
+        print("Exiting Phonebook. Goodbye!")
+        break
+      else:
+        print("Invalid choice! Please enter 1, 2, or 3.")
+
+
+
+if __name__ == '__main__':
+    main()
+```
